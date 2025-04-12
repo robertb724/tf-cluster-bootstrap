@@ -1,0 +1,13 @@
+provider:
+  name: cloudflare
+
+domainFilters: [robertbatson.com]
+
+txtOwnerId: homelab-k3s
+
+env:
+- name: CF_API_TOKEN
+  valueFrom:
+    secretKeyRef:
+      name: cloudflare-api-key
+      key: apiKey

@@ -1,0 +1,24 @@
+loki:
+  auth_enabled: false
+  commonConfig:
+    replication_factor: 1
+  storage:
+    type: 'filesystem'
+  query_scheduler:
+    max_outstanding_requests_per_tenant : 2048
+singleBinary:
+  replicas: 1
+  persistence:
+    enableStatefulSetAutoDeletePVC: true
+    enabled: true
+    size: 20Gi
+    storageClass: longhorn
+monitoring:
+  selfMonitoring:
+    enabled: false
+    grafanaAgent:
+      installOperator: false
+  lokiCanary:
+    enabled: false
+test:
+  enabled: false

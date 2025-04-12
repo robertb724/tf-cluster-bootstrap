@@ -1,0 +1,28 @@
+grafana:
+  ingress:
+    enabled: true
+    ingressClassName: nginx
+    hosts:
+      - grafana.robertbatson.com
+    annotations:
+      cert-manager.io/cluster-issuer: "cloudflare-letsencrypt-prod"
+    tls:
+    - secretName: grafana-tls
+      hosts:
+      - grafana.robertbatson.com
+
+  persistence:
+    enabled: true
+    type: sts
+    storageClassName: "longhorn"
+    size: 5Gi
+
+
+  datasources:
+    datasources.yaml:
+      apiVersion: 1
+      datasources:
+      - name: Loki
+        type: loki
+        orgId: 1
+        url: http://loki-gateway.loki
