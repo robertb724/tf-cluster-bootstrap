@@ -1,0 +1,2 @@
+creation_rules:
+  - gcp_kms: 'projects/robertb724-personal/locations/us-east1/keyRings/default/cryptoKeys/default'
