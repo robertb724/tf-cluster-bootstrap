@@ -13,7 +13,7 @@ resource "helm_release" "kube-prometheus-stack" {
   depends_on = [
     helm_release.longhorn
   ]
-  
+
 }
 
 data "google_secret_manager_secret_version" "discrord_webhook_url" {

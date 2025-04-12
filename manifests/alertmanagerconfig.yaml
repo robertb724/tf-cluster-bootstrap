@@ -23,4 +23,3 @@ spec:
       - apiURL:
           name: discord-webhook-url
           key: url
-

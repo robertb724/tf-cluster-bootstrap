@@ -22,7 +22,7 @@ resource "helm_release" "cert_manager" {
   repository = "https://charts.jetstack.io"
   namespace  = kubernetes_namespace.cert_manager.metadata[0].name
   chart      = "cert-manager"
-  values     = [
+  values = [
     file("${path.module}/values/cert-manager.values.yaml"),
   ]
 }
