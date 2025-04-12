@@ -9,7 +9,7 @@ resource "helm_release" "loki" {
     file("${path.module}/values/loki.values.yaml")
   ]
 
-  depends_on = [ 
+  depends_on = [
     helm_release.longhorn
   ]
 }

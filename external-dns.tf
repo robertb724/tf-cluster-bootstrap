@@ -20,14 +20,13 @@ resource "kubernetes_secret" "cloudflare_api_key" {
   }
 }
 
-
 resource "helm_release" "external_dns" {
   name       = "external-dns"
   repository = "https://kubernetes-sigs.github.io/external-dns/"
   namespace  = kubernetes_namespace.external_dns.metadata[0].name
   chart      = "external-dns"
-  values     = [
+  values = [
     file("${path.module}/values/external-dns.values.yaml"),
   ]
-  version    = "1.14.3"
+  version = "1.14.3"
 }

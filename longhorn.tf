@@ -6,5 +6,5 @@ resource "helm_release" "longhorn" {
   create_namespace = true
   values           = [file("${path.module}/values/longhorn.values.yaml")]
 
-  version          = "1.7.2"
+  version = "1.7.2"
 }

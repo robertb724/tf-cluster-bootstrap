@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket  = "robertb724-tfstate"
-    prefix  = "homelab/"
+    bucket = "robertb724-tfstate"
+    prefix = "homelab/"
   }
 }
